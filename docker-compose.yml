@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres
+    container_name: my-postgres
+    environment:
+      - POSTGRES_USER=igortcruz
+      - POSTGRES_PASSWORD=igortcruz
+      - POSTGRES_DB=food
+    ports:
+      - "5432:5432"
+    volumes:
+      - food_postgres_data:/postgres
+
+  pgAdmin:
+    image: dpage/pgadmin4
+    container_name: my-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=igortcruz@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=igortcruz
+    ports:
+      - "15432:80"
+    volumes:
+      - food_pgAdmin_data:/dpage/pgadmin4
+
+volumes:
+  food_postgres_data:
+  food_pgAdmin_data:
