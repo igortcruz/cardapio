@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class FoodController {
     @GetMapping
     public void getAll(){
-
+        System.out.println("Funcionou perfeito!");
     }
 }
